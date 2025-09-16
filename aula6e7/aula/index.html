@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let idade = 16;
+        let defVisual = false; 
+        let temHabilitacao = (idade >= 18);
+        //console.log(temHabilitacao);
+
+        
+        //console.log(typeof(idade));
+
+        let x = 5;
+        let y = "5";
+        //console.log(x !== y);
+       // console.log (idade >= 18);
+       // console.log(idade > 18 || idade == 18);
+
+       //console.log(idade >= 18 || defVisual === false)
+       
+//let idade2 = 17;
+//let status = (idade2 >=18) ? "Adulto" : "Menor de idade"; 
+//console.log(status);
+
+/*
+        if(condicao){
+            // bloco de código que será executado se a condição for satisfeita..
+        } 
+*/
+/*
+        if(idade >= 18){
+            console.log("Você é maior de idade..");
+        }
+        else{
+            console.log("Você ainda é menor de idade..");
+        }
+
+*/
+
+        let isAdmin = false;
+        let isLoggedIn = true;
+        let isPremium  = true;
+
+        if (isAdmin == true || (isLoggedIn == true && isPremium == true)){
+            console.log("Acesso permitido!");
+        }else{
+            console.log("Acesso negado!");
+        }
+
+
+    </script>
+</body>
+</html>
