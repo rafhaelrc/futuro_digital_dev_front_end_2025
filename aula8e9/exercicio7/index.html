@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function contarVogais(texto) {
+            const vogais = "aeiou";
+            let contador = 0;
+
+            // 'caractere' irá receber cada letra da string 'texto'
+            for (const caractere of texto) {
+                // Convertemos para minúscula para garantir que A, E, I, etc., sejam contados
+                // e verificamos se a string 'vogais' inclui o caractere atual.
+              
+                /*
+                if (vogais.includes(caractere.toLowerCase())) {
+                    contador++;
+                }
+                */
+               
+                if(caractere == "a" || caractere == "e" || caractere == "i" || caractere == "o" || caractere == "u"){
+                    contador++;
+                }
+
+            }
+
+            return contador;
+        }
+        let textoTratado = "JavaScript é Poderoso".toLowerCase();
+        //console.log(contarVogais(textoTratado)); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+
+</html>

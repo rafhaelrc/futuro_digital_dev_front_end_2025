@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // O laço externo controla o número de linhas (de 1 a 5)
+        for (let i = 1; i <= 5; i++) {
+            let linha = ""; // A cada nova linha, reiniciamos a string
+
+            // O laço interno controla quantos asteriscos são adicionados na linha atual.
+            // Ele executa 'i' vezes. Na linha 1, executa 1 vez. Na linha 3, executa 3 vezes.
+            for (let j = 1; j <= i; j++) {
+                linha += "*"; // Adiciona um asterisco à string da linha
+            }
+
+            console.log(linha); // Imprime a linha completa
+        }
+    </script>
+</body>
+
+</html>

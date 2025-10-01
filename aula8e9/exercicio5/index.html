@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const carro = {
+            marca: "Ford",
+            modelo: "Mustang",
+            ano: 1969,
+            cor: "vermelho"
+        };
+
+        function descreverCarro(objetoCarro) {
+            let descricao = []; // Usar um array é mais eficiente para construir strings
+
+            // 'prop' irá receber "marca", "modelo", "ano", e "cor" a cada iteração
+            for (const prop in objetoCarro) {
+                // Adiciona a string formatada "propriedade: valor" ao array
+                descricao.push(`${prop}: ${objetoCarro[prop]}`);
+            }
+
+            // O método .join() une os elementos do array em uma única string,
+            // usando ". " como separador, e adicionamos um ponto final.
+            return descricao.join(". ") + ".";
+        }
+
+        console.log(descreverCarro(carro));
+        // Saída: "marca: Ford. modelo: Mustang. ano: 1969. cor: vermelho."
+    </script>
+</body>
+
+</html>

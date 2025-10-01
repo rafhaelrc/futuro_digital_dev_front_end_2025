@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function contagemRegressiva(inicio) {
+            let atual = inicio; // Guarda o estado atual da contagem
+
+            // Retorna o objeto iterador
+            return {
+                // O método next() é obrigatório para um iterador
+                next() {
+                    if (atual >= 1) {
+                        // Se a contagem não terminou, retorna o valor atual e done: false.
+                        // O `atual--` (pós-decremento) usa o valor atual e SÓ DEPOIS o decrementa.
+                        return { value: atual--, done: false };
+                    } else {
+                        // Se a contagem terminou, retorna done: true.
+                        return { value: undefined, done: true };
+                    }
+                }
+            };
+        }
+
+        const iterador = contagemRegressiva(3);
+
+        console.log(iterador.next()); // { value: 3, done: false }
+        console.log(iterador.next()); // { value: 2, done: false }
+        console.log(iterador.next()); // { value: 1, done: false }
+        console.log(iterador.next()); // { value: undefined, done: true }
+    </script>
+</body>
+
+</html>

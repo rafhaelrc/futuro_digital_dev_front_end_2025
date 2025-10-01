@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function* gerarId() {
+            let id = 1;
+            while (true) { // Este laço é infinito
+                yield id; // Pausa a função e retorna o 'id' atual
+                id++; // Incrementa o id para a próxima vez que .next() for chamado
+            }
+        }
+
+        const idGenerator = gerarId();
+
+        console.log("Os 5 primeiros IDs gerados:");
+        // Usamos um laço for...of para consumir o gerador
+        for (const id of idGenerator) {
+            console.log(id);
+            // Como o gerador é infinito, precisamos de uma condição de parada!
+            if (id >= 5) {
+                break; // O break para o laço for...of
+            }
+        }
+    </script>
+</body>
+
+</html>

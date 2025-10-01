@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const numeroSecreto = 7;
+        let palpite;
+
+        // O laço do...while garante que o bloco de código execute pelo menos uma vez
+        do {
+            // Pede um palpite ao usuário e converte a string para um número inteiro
+            palpite = parseInt(prompt("Adivinhe o número secreto (entre 1 e 10):"));
+            
+
+            // Oferece uma dica se o palpite estiver errado  
+            if (palpite !== numeroSecreto) {
+                alert("Errado! Tente novamente.");
+            }
+            
+        } while (palpite !== numeroSecreto); // A condição é verificada no final
+
+        alert("Parabéns! Você acertou!"); // Esta linha só é executada quando o laço termina
+    </script>
+</body>
+
+</html>

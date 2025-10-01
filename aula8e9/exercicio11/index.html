@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function* fibonacci(limite) {
+            let a = 0;
+            let b = 1;
+
+            for (let i = 0; i < limite; i++) {
+                yield a;
+                // A atribuição via desestruturação [a, b] = [b, a + b] é uma forma
+                // elegante de atualizar os dois valores sem precisar de uma variável temporária.
+                [a, b] = [b, a + b];
+            }
+        }
+
+        console.log("Os 8 primeiros números da sequência de Fibonacci:");
+        const fib = fibonacci(8);
+
+        for (const numero of fib) {
+            console.log(numero); // 0, 1, 1, 2, 3, 5, 8, 13
+        }
+    </script>
+</body>
+
+</html>

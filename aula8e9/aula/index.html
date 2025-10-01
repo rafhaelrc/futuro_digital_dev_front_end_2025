@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        /*
+        let i = 5;
+        
+        do {
+            console.log("o número é: " + i);
+            i++;
+        }
+        while (i < 5);
+        console.log("Terminou a execução, o valor do i agora é: " + i);
+        */
+
+        /*
+        let i = 4;
+        
+        while (i < 5) {
+            console.log("o número é: " + i);
+            i++;
+        }
+        console.log("Terminou a execução, o valor do i agora é: " + i);
+        */
+
+        /*
+        let i;
+        for (i = 0; i < 5; i++) {
+            console.log("o número é: " + i);
+            // i++;
+        }
+        console.log("Terminou a execução, o valor do i agora é: " + i);
+        */
+        /*
+        const numero = 5;
+        //console.log(`tabuada do ${numero}:`);
+
+        for (let i = 1; i <= 10; i++) {
+            console.log(`Tabuada do ${i}:`);
+            for (let j = 1; j <= 10; j++) {
+                console.log(`${i} x ${j} = ${i * j}`);
+            }    
+        }    
+        */
+
+        /*
+        const frutas = ["Maça", "Banana", "Laranja", "Morango"];
+        
+        for (let i = 0; i < frutas.length; i++) {
+            console.log(`Eu gosto de ${frutas[i]}`);
+        }
+
+        */
+
+        const teste = "valor";
+        // chave - valor
+        const pessoa = {
+            nome: "Ana",
+            sobrenome: "Silva",
+            idade: 25
+        };
+
+        //console.log(pessoa);
+
+        for (let propriedade in pessoa) {
+            // console.log(`${propriedade} : ${pessoa[propriedade]}`);
+        }
+
+        //descreverCarro("ford maverick");
+
+
+
+        function semParametro(parametro) {
+            console.log("essa função não tem parametro: " + parametro);
+        }
+
+        function descreverCarro(nome) {
+
+            console.log("chamando a função.." + nome);
+        }
+
+
+        const carros = ["BMW", "VOLVO", "MINI"];
+
+        //console.log("tamanho carros:" + carros.length);
+        for (i = 0; i < 2; i++) {
+            // console.log(carros[i]);
+        }
+
+
+
+        for (let carro of carros) {
+            //console.log(carro);
+        }
+
+        console.log("");
+
+        const meuObjetoIteravel = {
+            de: 3,
+            ate: 4,
+            [Symbol.iterator]() {
+                let atual = this.de;
+                const final = this.ate;
+                return {
+                    next() {
+                        if (atual <= final) {
+                            return { value: atual++, done: false };
+                        } else {
+                            return { done: true };
+                        }
+                    }
+                };
+            }
+        };
+
+        for (const num of meuObjetoIteravel) {
+            console.log(num); // 1, 2, 3, 4
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

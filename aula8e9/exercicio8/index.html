@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const frase = {
+            texto: "JavaScript é muito poderoso",
+
+            // Implementando o protocolo de iteração
+            [Symbol.iterator]() {
+                // 1. Dividimos a string em um array de palavras
+                const palavras = this.texto.split(' ');
+
+                // 2. Um array já é um iterável, então podemos simplesmente
+                //    retornar o iterador padrão do array de palavras.
+                return palavras[Symbol.iterator]();
+            }
+        };
+
+        // Agora podemos usar o for...of diretamente no objeto 'frase'
+        for (const palavra of frase) {
+            console.log(palavra);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const plataformaCursos = {
+            nome: "DevFlix",
+            cursos: [
+                {
+                    titulo: "JavaScript Moderno: Do Básico ao Avançado",
+                    tecnologia: "JavaScript",
+                    aulas: [
+                        { id: 1, titulo: "Introdução e Variáveis" },
+                        { id: 2, titulo: "Funções e Escopo" },
+                        { id: 3, titulo: "Arrays e Objetos" }
+                    ]
+                },
+                {
+                    titulo: "React: Construindo Interfaces Reativas",
+                    tecnologia: "React",
+                    aulas: [
+                        { id: 1, titulo: "Configurando o Ambiente" },
+                        { id: 2, titulo: "Componentes e Props" },
+                        { id: 3, titulo: "Estado e Ciclo de Vida" }
+                    ]
+                },
+                {
+                    titulo: "Node.js: API's Robustas com Express",
+                    tecnologia: "Node.js",
+                    aulas: [
+                        { id: 1, titulo: "O que é Node.js?" },
+                        { id: 2, titulo: "Criando um Servidor com Express" }
+                    ]
+                }
+            ]
+        };
+
+
+        /**
+ * Analisa o objeto da plataforma e exibe seus detalhes no console.
+ * @param {object} plataforma O objeto da plataforma de cursos.
+ */
+        function exibirDetalhesPlataforma(plataforma) {
+            console.log(`Bem-vindo à plataforma ${plataforma.nome}!`);
+
+            // Usando a propriedade .length de um array para saber o total de cursos.
+            console.log(`Temos ${plataforma.cursos.length} cursos disponíveis.`);
+            console.log("---");
+
+            // Usamos um laço 'for' clássico porque precisamos do índice (i) para numerar os cursos.
+            for (let i = 0; i < plataforma.cursos.length; i++) {
+                const curso = plataforma.cursos[i];
+                console.log(`Analisando curso ${i + 1}:`);
+
+                // Usamos 'for...in' para iterar sobre as PROPRIEDADES do objeto 'curso'.
+                for (const propriedade in curso) {
+                    // É uma boa prática verificar se a propriedade pertence diretamente ao objeto.
+                    // E filtramos para exibir apenas as propriedades que nos interessam ('titulo' e 'tecnologia').
+                    if (curso.hasOwnProperty(propriedade) && (propriedade === 'titulo' || propriedade === 'tecnologia')) {
+                        console.log(`${propriedade}: ${curso[propriedade]}`);
+                    }
+                }
+            }
+            console.log("---");
+        }
+
+        /**
+ * Função geradora que cria um plano de estudos sequencial a partir de uma lista de cursos.
+ * @param {Array} cursos Um array de objetos de curso.
+ * @yields {object|string} Gera um objeto de aula ou uma string de quiz.
+ */
+        function* gerarPlanoDeEstudos(cursos) {
+            let aulasConcluidas = 0; // Contador para o desafio bônus
+
+            // Usamos 'for...of' pois queremos o VALOR (o objeto de curso) de cada item do array.
+            for (const curso of cursos) {
+                // Da mesma forma, usamos 'for...of' para obter cada objeto de aula.
+                for (const aula of curso.aulas) {
+                    // 'yield' pausa a execução e retorna o objeto formatado.
+                    yield {
+                        curso: curso.titulo,
+                        aula: aula.titulo
+                    };
+
+                    aulasConcluidas++; // Incrementa o contador de aulas
+
+                    // Lógica do desafio bônus: a cada 2 aulas, gera um quiz.
+                    if (aulasConcluidas % 2 === 0) {
+                        yield "--- Hora do Quiz! ---";
+                    }
+                }
+            }
+        }
+
+        /**
+ * Executa o plano de estudos, consumindo o gerador e exibindo cada etapa.
+ */
+        function consumirPlanoDeEstudos() {
+            // 1. Chamamos a função geradora, que retorna um objeto iterador.
+            const meuPlano = gerarPlanoDeEstudos(plataformaCursos.cursos);
+
+            console.log("Seu plano de estudos personalizado:");
+            console.log("---");
+
+            let contadorDeAulas = 1;
+
+            // 2. Usamos 'for...of' para consumir o iterador de forma simples e limpa.
+            for (const itemDoPlano of meuPlano) {
+                // Verificamos o TIPO do item gerado ('yielded')
+                // Se for uma string, é o nosso quiz (do desafio bônus).
+                if (typeof itemDoPlano === 'string') {
+                    console.log(itemDoPlano);
+                } else {
+                    // Se for um objeto, é uma aula normal.
+                    console.log(`Aula ${contadorDeAulas}: Iniciando aula "${itemDoPlano.aula}" do curso "${itemDoPlano.curso}".`);
+                    contadorDeAulas++;
+                }
+            }
+
+            console.log("---");
+            console.log("Plano de estudos concluído!");
+        }
+
+
+        // Executa a análise da plataforma
+        exibirDetalhesPlataforma(plataformaCursos);
+
+        // Executa o consumo do plano de estudos
+        consumirPlanoDeEstudos();
+    </script>
+</body>
+
+</html>

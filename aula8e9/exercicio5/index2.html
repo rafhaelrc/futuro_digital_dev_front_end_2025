@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const carro = {
+            marca: "Ford",
+            modelo: "Mustang",
+            ano: 1969,
+            cor: "vermelho"
+        };
+        
+        function descreverCarro(objetoCarro) {
+            let carroCompleto = "";
+            for (const prop in objetoCarro) {
+                // Adiciona a string formatada "propriedade: valor" a variável
+                carroCompleto += `${prop}: ${objetoCarro[prop]}. `;
+            }
+            return carroCompleto;
+        }
+       
+        let resultadoMetodo = descreverCarro(carro);
+
+        console.log(resultadoMetodo);
+        // Saída: "marca: Ford. modelo: Mustang. ano: 1969. cor: vermelho."
+    </script>
+</body>
+
+</html>

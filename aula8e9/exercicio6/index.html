@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const palavras = ["maçã", "banana", "laranja"];
+        const palavrasMaiusculas = []; // Array para armazenar o resultado
+
+        /*
+        for(i = 0; i < palavras.length; i++){
+            palavras[i] = palavras[i].toUpperCase();
+        }
+        */
+
+        // 'palavra' irá receber "maçã", "banana", e "laranja" a cada iteração
+        for (const palavra of palavras) {
+            // Converte a palavra para maiúsculas e a adiciona ao novo array
+            palavrasMaiusculas.push(palavra.toUpperCase());
+            
+        }
+
+        console.log(palavrasMaiusculas); // Saída: ["MAÇÃ", "BANANA", "LARANJA"] 
+    </script>
+</body>
+
+</html>
