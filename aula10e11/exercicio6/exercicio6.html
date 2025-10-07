@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 6 - Referência de Métodos</title>
+</head>
+<body>
+    <h1>Resposta do Exercício 6</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver os resultados.</p>
+
+    <script>
+        console.log("--- Resposta do Exercício 6 ---");
+
+        // a) Verificar se o nome "Maria" existe em uma lista de convidados.
+        const convidados = ["João", "Ana", "Carlos", "Maaria"];
+        const temMaria = convidados.includes("Maria");
+
+        console.log("a) A lista de convidados inclui 'Maria'?", temMaria == true ? "Existe" : "Não existe"); // Método: includes()
+
+        // b) Obter os 3 primeiros colocados de um array de pontuações.
+        const pontuacoes = [88, 95, 102, 75, 98];
+        pontuacoes.sort((a, b) => b - a); // Ordena do maior para o menor
+        const top3 = pontuacoes.slice(0, 3);
+        console.log("b) Os 3 primeiros colocados são:", top3); // Métodos: sort() e slice()
+
+        // c) Calcular o valor total de um carrinho de compras.
+        const carrinho = [
+            { item: 'Livro', preco: 49.90 },
+            { item: 'Caneta', preco: 5.00 },
+            { item: 'Caderno', preco: 15.50 }
+        ];
+        const total = carrinho.reduce((soma, item) => soma + item.preco, 0);
+        console.log("c) O valor total do carrinho é:", total.toFixed(2)); // Método: reduce()
+
+        // d) Criar uma lista de e-mails a partir de um array de objetos de usuários.
+        const usuarios = [
+            { nome: 'Ana', email: 'ana@email.com' },
+            { nome: 'Bruno', email: 'bruno@email.com' },
+            { nome: 'Carla', email: 'carla@email.com' }
+        ];
+        const emails = usuarios.map(usuario => usuario.email);
+        console.log("d) A lista de e-mails é:", emails); // Método: map()
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 7 - Arrays e const</title>
+</head>
+<body>
+    <h1>Resposta do Exercício 7</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver os resultados.</p>
+
+    <script>
+        console.log("--- Resposta do Exercício 7 ---");
+
+        // 1. Declare um array de `cores` usando `const`.
+        const cores = ["vermelho", "verde", "amarelo"];
+        console.log("Array original:", cores);
+
+        // 2. Tente reatribuir o array `cores`.
+        try {
+            cores = ["roxo", "laranja"];
+        } catch (error) {
+            console.error("2. Tentativa de reatribuição gerou um erro (o que é esperado):", error.message);
+        }
+
+        // 3. Use push() para adicionar uma nova cor.
+        cores.push("azul");
+        console.log("3. Array após push('azul'):", cores);
+
+        // 4. Use pop() para remover a última cor.
+        const corRemovida = cores.pop();
+        console.log("4. Cor removida com pop():", corRemovida);
+
+        // 5. Exiba o array final.
+        console.log("5. Array final:", cores);
+        console.log("Isso prova que os elementos de um array 'const' podem ser modificados, mas a variável não pode ser reatribuída.");
+    </script>
+</body>
+</html>

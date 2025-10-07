@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2 - Métodos de Arrays</title>
+</head>
+<body>
+    <h1>Resposta do Exercício 2</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver os resultados.</p>
+
+    <script>
+        console.log("--- Resposta do Exercício 2 ---");
+
+        // 1. Crie uma lista de tarefas (array) com 3 tarefas.
+        const listaDeTarefas = ["Estudar JavaScript", "Limpar o quarto", "Fazer compras"];
+        console.log("Lista inicial:", listaDeTarefas);
+
+        // 2. Adicione uma tarefa de "alta prioridade" no início da lista.
+        listaDeTarefas.unshift("Alta Prioridade: Entregar projeto");
+        console.log("Após unshift():", listaDeTarefas);
+
+        // 3. Remova a última tarefa da lista.
+        const tarefaRemovida = listaDeTarefas.pop();
+        console.log("Tarefa removida com pop():", tarefaRemovida);
+        console.log("Lista após pop():", listaDeTarefas);
+
+        // 4. Use splice para substituir a segunda tarefa por duas novas tarefas.
+        // A segunda tarefa está no índice 1.
+        listaDeTarefas.splice(1, 1, "Pagar contas", "Ligar para o cliente");
+        console.log("Lista após splice():", listaDeTarefas);
+
+        // 5. Exiba a lista de tarefas final no console.
+        console.log("Lista de tarefas final:", listaDeTarefas);
+    </script>
+</body>
+</html>

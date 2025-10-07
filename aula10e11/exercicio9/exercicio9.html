@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 9 - Métodos de Typed Arrays</title>
+</head>
+<body>
+    <h1>Resposta do Exercício 9</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver os resultados.</p>
+
+    <script>
+        console.log("--- Resposta do Exercício 9 ---");
+
+        // 1. Crie um Float32Array.
+        const dadosOriginais = new Float32Array([1.1, 2.2, 3.3, 4.4, 5.5]);
+        console.log("1. Array original:", dadosOriginais);
+
+        // 2. Crie um segundo Float32Array.
+        const dadosCopia = new Float32Array(5);
+        console.log("2. Array de cópia (vazio):", dadosCopia);
+
+        // 3. Use set() para copiar os valores.
+        dadosCopia.set(dadosOriginais);
+        console.log("3. Array de cópia após set():", dadosCopia);
+
+        // 4. Crie um subarray dos 3 últimos elementos.
+        // Começa do índice 2 (o terceiro elemento) até o final.
+        const subarray = dadosOriginais.subarray(2);
+        console.log("4. Subarray criado:", subarray);
+
+        // 5. Modifique um valor no subarray e verifique a alteração.
+        subarray[0] = 99.9; // Modifica o primeiro elemento do subarray.
+        console.log("5. Subarray após modificação:", subarray);
+        console.log("   Array original após modificação do subarray:", dadosOriginais);
+        console.log("Note que o terceiro elemento do array original (índice 2) foi alterado. Isso ocorre porque o subarray é apenas uma 'view' que aponta para o mesmo buffer de memória do array original.");
+    </script>
+</body>
+</html>

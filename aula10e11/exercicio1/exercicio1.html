@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 1 - Conceitos Básicos de Arrays</title>
+</head>
+<body>
+    <h1>Resposta do Exercício 1</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver os resultados.</p>
+
+    <script>
+        console.log("--- Resposta do Exercício 1 ---");
+
+        // 1. Crie um array chamado `filmes` com seus 3 filmes favoritos.
+        const filmes = ["O Senhor dos Anéis", "Interestelar", "A Origem"];
+        console.log("Array inicial:", filmes);
+
+        // 2. Exiba no console o segundo filme da lista.
+        console.log("O segundo filme da lista é:", filmes[1]);
+
+        // 3. Substitua o último filme da lista por um novo filme de sua escolha.
+        filmes[filmes.length - 1] = "O Poderoso Chefão";
+        console.log("Array após substituir o último filme:", filmes);
+
+        // 4. Exiba o tamanho final do array no console.
+        console.log("O tamanho final do array é:", filmes.length);
+    </script>
+</body>
+</html>

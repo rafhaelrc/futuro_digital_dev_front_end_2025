@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3 - Pesquisa em Arrays</title>
+</head>
+<body>
+    <h1>Resposta do Exercício 3</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver os resultados.</p>
+
+    <script>
+        console.log("--- Resposta do Exercício 3 ---");
+
+        // 1. Crie um array de idades.
+        const idades = [15, 22, 18, 35, 18, 40];
+        console.log("Array de idades:", idades);
+
+        // 2. Use includes() para verificar se a idade 18 está presente.
+        const tem18anos = idades.includes(18);
+        console.log("O array inclui a idade 18?", tem18anos);
+
+        // 3. Use indexOf() para encontrar a posição da primeira pessoa com 18 anos.
+        const primeiroIndice18 = idades.indexOf(18);
+        console.log("O índice da primeira ocorrência de 18 é:", primeiroIndice18);
+
+        // 4. Use find() para encontrar a primeira idade que seja maior de idade (>= 18).
+        const primeiraMaiorIdade = idades.find(idade => idade >= 18);
+        console.log("A primeira idade maior ou igual a 18 é:", primeiraMaiorIdade);
+
+        // 5. Use findLastIndex() para encontrar a posição da última pessoa com 18 anos.
+        const ultimoIndice18 = idades.findLastIndex(idade => idade === 18);
+        console.log("O índice da última ocorrência de 18 é:", ultimoIndice18);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 8 - Typed Arrays</title>
+</head>
+<body>
+    <h1>Resposta do Exercício 8</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver os resultados.</p>
+
+    <script>
+        console.log("--- Resposta do Exercício 8 ---");
+
+        // 1. Crie um ArrayBuffer com 16 bytes.
+        const buffer = new ArrayBuffer(16);
+        console.log("1. ArrayBuffer de 16 bytes criado.");
+
+        // 2. Crie uma view do tipo Uint8Array.
+        const uint8View = new Uint8Array(buffer);
+        console.log("2. View Uint8Array criada. Comprimento:", uint8View.length);
+
+        // 3. Preencha o array com 16 valores.
+        for (let i = 0; i < uint8View.length; i++) {
+            uint8View[i] = i;
+        }
+        console.log("3. View Uint8Array preenchida:", uint8View);
+
+        // 4. Crie uma segunda view do tipo Int32Array para o mesmo buffer.
+        const int32View = new Int32Array(buffer);
+        console.log("4. View Int32Array criada. Comprimento:", int32View.length);
+
+        // 5. Exiba o conteúdo da segunda view no console.
+        console.log("5. Conteúdo da view Int32Array:", int32View);
+        console.log("Explicação: Um Int32 (inteiro de 32 bits) ocupa 4 bytes. Nosso buffer tem 16 bytes, então cabem 4 inteiros de 32 bits nele (16 / 4 = 4). O navegador agrupa os bytes da view Uint8Array de 4 em 4 e os interpreta como um único número de 32 bits, considerando a ordem dos bytes (geralmente little-endian).");
+    </script>
+</body>
+</html>

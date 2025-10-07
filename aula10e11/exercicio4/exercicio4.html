@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 4 - Ordenação de Arrays</title>
+</head>
+<body>
+    <h1>Resposta do Exercício 4</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver os resultados.</p>
+
+    <script>
+        console.log("--- Resposta do Exercício 4 ---");
+
+        // 1. Ordene um array de nomes alfabeticamente.
+        const nomes = ["Carlos", "Ana", "Zoe", "Bernardo"];
+        nomes.sort();
+        console.log("Nomes em ordem alfabética:", nomes);
+
+        // 2. Ordene um array de pontuações do menor para o maior.
+        const pontuacoes = [34, 102, 5, 55, 21];
+        //function (a, b) { return a - b; }
+        pontuacoes.sort((a, b) => a - b);
+        console.log("Pontuações em ordem crescente:", pontuacoes);
+
+        // 3. Ordene um array de produtos do mais barato para o mais caro.
+        const produtos = [
+            { nome: "Notebook", preco: 4500 },
+            { nome: "Mouse", preco: 150 },
+            { nome: "Monitor", preco: 1200 },
+            { nome: "Teclado", preco: 350 }
+        ];
+        produtos.sort((a, b) => a.preco - b.preco);
+        console.log("Produtos ordenados por preço:", produtos);
+    </script>
+</body>
+</html>

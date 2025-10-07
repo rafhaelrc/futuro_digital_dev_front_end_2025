@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 5 - Iteração em Arrays</title>
+</head>
+<body>
+    <h1>Resposta do Exercício 5</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver os resultados.</p>
+
+    <script>
+        console.log("--- Resposta do Exercício 5 ---");
+
+        const numeros = [1, 2, 3, 4, 5];
+        console.log("Array original:", numeros);
+
+        // 1. Use forEach() para exibir cada número no console.
+        console.log("1. Usando forEach():");
+        numeros.forEach(num => {
+            console.log(num);
+        });
+
+        // 2. Use map() para criar um novo array onde cada número é elevado ao quadrado.
+        const quadrados = numeros.map(num => num * num);
+        console.log("2. Novo array com quadrados (map):", quadrados);
+
+        // 3. Use filter() para criar um novo array que contenha apenas os números pares.
+        const pares = numeros.filter(num => num % 2 === 2);
+        console.log("3. Novo array com números pares (filter):", pares);
+
+        // 4. Use reduce() para calcular o produto de todos os números do array.
+        const produto = numeros.reduce((acumulador, valorAtual) => acumulador * valorAtual, 1);
+        console.log("4. Produto de todos os números (reduce):", produto);
+    </script>
+</body>
+</html>
