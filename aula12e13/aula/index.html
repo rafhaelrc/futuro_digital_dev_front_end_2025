@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        let result;
+        let resultadoSoma = somar(10,4);
+        console.log(somar(10,4));
+        console.log(resultadoSoma);
+        console.log(resultadoSoma - 5);        
+        console.log(result);
+        
+
+        function somar(a, b){
+            result = a + b;
+            //return a + b;
+        }
+        */
+        /*
+        criarMensagem();
+
+        function criarMensagem(){
+            let mensagem = "Olá, escopo local!";
+            console.log(mensagem);
+        }
+
+        console.log(mensagem);
+        */
+
+        /*
+        
+
+        let subtrair = function (a, b) { // Função anônima
+            return a - b;
+        };
+
+        console.log(subtrair(10, 4)); // 6
+        
+        
+        */
+        /*
+        // Expressão de Função Tradicional
+        const multiplicar = function (a, b) {
+            return a * b;
+        };
+
+        // Arrow Function Equivalente
+        
+        const multiplicarArrow = (a, b) => a * b;
+        console.log(multiplicarArrow(10,4));
+        */
+
+        /*
+        (function () {
+            let mensagem = "Eu só existo aqui dentro!";
+            console.log(mensagem);
+        })(); // Os parênteses no final invocam a função
+        */
+
+        /*
+        const somar = new Function('a', 'b', 'c', 'return a + b + c');
+        console.log(somar(2, 6, 8)); // 8
+        */
+
+        /*
+        function cumprimentar(nome = "Visitante") {
+            console.log(`Olá, ${nome}!`);
+        }
+
+        cumprimentar("Ana"); // Olá, Ana!
+        cumprimentar();    // Olá, Visitante!
+        */
+
+        /*
+        function somarTodos(...numeros) {
+            console.log(numeros);
+            return numeros.reduce((total, num) => total + num, 0);
+        }
+
+        
+
+        console.log(somarTodos(1, 2, 3));       // 6
+        console.log(somarTodos(10, 20, 30, 40)); // 100
+        */
+
+        //console.log(this); // window
+        /*
+        function quemSouEu() {
+            console.log(this);
+        }
+        quemSouEu(); // window
+        */
+
+        /*
+        const pessoa = {
+            nome: "Carla",
+            apresentar: function () {
+                console.log("Meu nome é " + this.nome);
+            }
+        };
+
+        pessoa.apresentar(); // "Meu nome é Carla"
+        */
+        /*
+        const meuObjeto = {
+            valor: 42,
+            getValorRegular: function () {
+                setTimeout(function () {
+                    console.log(this.valor); // undefined (this é window)
+                }, 1000);
+            },
+            getValorArrow: function () {
+                setTimeout(() => {
+                    console.log(this.valor); // 42 (this é meuObjeto)
+                }, 1000);
+            }
+        };
+        meuObjeto.getValorArrow();
+        */
+
+        /*
+        function saudacao(cidade) {
+            if(this.nome != undefined){
+                console.log(`Olá, sou ${this.nome} de ${cidade}.`);
+            }
+            else{
+                console.log(`Olá, sou de ${cidade}.`);
+            }
+            //console.log(`Olá, sou ${this.nome} de ${cidade}.`);
+        }
+
+        const pessoa1 = { nome: "Lucas" };
+        saudacao.call(pessoa1, "Porto Alegre");
+        saudacao("Vacaria");
+        //saudacao("Porto Alegre");
+        */
+
+        /*
+        function saudacao(cidade, estado) {
+            console.log(`Olá, sou ${this.nome} de ${cidade}, ${estado}.`);
+        }
+
+        const pessoa2 = { nome: "Julia" };
+        saudacao.apply(pessoa2, ["Curitiba", "PR"]);
+        */
+
+
+        /*
+        const carro = {
+            marca: "Fiat",
+            getMarca: function () {
+                return this.marca;
+            }
+        };
+
+        const funcaoGetMarcaNormal = carro.marca;
+        const funcaoGetMarca = carro.getMarca.bind(carro);
+        //console.log(funcaoGetMarca);
+        console.log(funcaoGetMarca()); // "Fiat"
+        */
+        /*
+        function criarSaudacao(saudacao) {
+            // A função interna "lembra" da variável 'saudacao'
+            return function (nome) {
+                console.log(`${saudacao}, ${nome}!`);
+                // saudacao = "Bom dia"
+            };
+        }
+
+        const saudarComOla = criarSaudacao("Olá");
+
+        console.log(saudarComOla);
+
+        const saudarComBomDia = criarSaudacao("Bom dia");
+
+        saudarComOla("Mundo");      // Olá, Mundo!
+        saudarComBomDia("Maria");   // Bom dia, Maria!
+
+        */
+
+        function criarContador() {
+            let contadorPrivado = 0; // Esta variável está "presa" na mochila
+
+            // As funções abaixo são closures. Elas carregam 'contadorPrivado' em suas mochilas.
+            return {
+                incrementar: function () {
+                    contadorPrivado++;
+                    console.log("Incrementado!");
+                },
+                getValor: function () {
+                    return contadorPrivado;
+                }
+            };
+        }
+
+        const meuContador = criarContador();
+
+        meuContador.incrementar(); // "Incrementado!"
+        meuContador.incrementar(); // "Incrementado!"
+
+        console.log(meuContador.getValor()); // Saída: 2
+
+        // Você NÃO consegue acessar a variável diretamente. Ela está protegida.
+        console.log(meuContador.contadorPrivado = 3); // Saída: undefined
+        console.log(meuContador.getValor());
+
+    </script>
+</body>
+
+</html>

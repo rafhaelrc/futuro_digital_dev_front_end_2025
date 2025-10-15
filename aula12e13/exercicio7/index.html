@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resposta - Exercício bind()</title>
+</head>
+
+<body>
+    <h1>Resposta - Exercício: `bind()`</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver o resultado.</p>
+
+    <script>
+        console.log("--- Exercício: `bind()` ---");
+        const pessoa = {
+            nome: "Carla",
+            apresentar: function () {
+                console.log("Meu nome é " + this.nome);
+            }
+        };
+
+        /*
+        function () {
+                console.log("Meu nome é " + this.nome);
+            }
+        */
+        const apresentacaoSolta = pessoa.apresentar; 
+        console.log(apresentacaoSolta);
+        //console.log("Tentando chamar a função 'solta' (o 'this' se perde):");
+        try { apresentacaoSolta() } catch (e) { console.error(e.message) };
+
+        const apresentacaoCorreta = pessoa.apresentar.bind(pessoa);
+        //console.log("Chamando a função criada com bind():");
+        apresentacaoCorreta();
+    </script>
+</body>
+
+</html>

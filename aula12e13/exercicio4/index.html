@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resposta - Exercício Parâmetros</title>
+</head>
+<body>
+    <h1>Resposta - Exercício: Parâmetros Padrão e Rest</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver o resultado.</p>
+
+    <script>
+        console.log("--- Exercício: Parâmetros Padrão e Rest ---");
+        function registrarLog(tipo = "INFO", ...mensagens) {
+            const mensagemCompleta = mensagens.join(" ");
+            console.log(`[${tipo}] ${mensagemCompleta}`);
+        }
+        registrarLog("ERRO", "Falha", "na", "conexão.");
+        registrarLog("O usuário fez login com sucesso.", "teste", "concatenado");
+    </script>
+</body>
+</html>

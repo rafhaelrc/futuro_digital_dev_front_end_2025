@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        const cars = ["Saab", "Volvo", "BMW"];
+        cars[0] = "Opel"; // Altera o primeiro elementos
+
+        //console.log(cars[0]);
+
+        let size = cars.length; // size será 3
+
+        //console.log(size);
+        //console.log(cars[2]);
+        
+        const person = ["John", "Doe", 46]; // Array com string e número
+        const myArray = [];
+        myArray[0] = Date.now;
+        myArray[1] = 'myFunction';
+        myArray[2] = 'myCars'; // Array pode conter funções e outros arrays
+
+        //console.log(myArray);
+
+
+        //const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        //console.log(fruits.length);
+        //console.log(fruits[4]);
+        //let last = fruits[fruits.length - 1]; // Acessa "Mango"
+
+        //console.log(last);
+
+        //qconst fruits = ["Banana", "Orange", "Apple"];
+        //fruits[fruits.length] = "Mango";
+        //console.log(fruits);
+
+
+        //console.log(fruits.length);
+        //fruits.push("Mango"); // fruits agora é ["Banana", "Orange", "Apple", "Mango"]
+        //console.log(fruits);
+        //console.log(fruits.length);
+        //console.log(fruits[fruits.length - 1]);
+        //fruits[fruits.length - 1] = "";
+        //fruits.push("pera");
+        //console.log(fruits);
+        //let removed = fruits.pop(); // removed é "Mango"
+
+        /*
+        const fruits = ["Banana", "Orange"];
+        fruits.unshift("Lemon"); // fruits agora é ["Lemon", "Banana", "Orange"]
+        console.log(fruits);
+        let removed = fruits.shift(); // removed é "Lemon"
+        console.log(removed);
+        */
+
+        /*
+        const arr1 = ["A", "B"];
+        const arr2 = ["C", "D"];
+        const newArr = arr1.concat(arr2); // newArr é ["A", "B", "C", "D"]
+        const newArr2 = arr2.concat(arr1);
+        console.log(newArr);
+        console.log(newArr2);
+        */
+        /*
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // A partir do índice 2, remove 1 elemento e adiciona "Lemon" e "Kiwi"
+        fruits.splice(2, 2, "Lemon", "Kiwi", "Pera");
+        // fruits agora é ["Banana", "Orange", "Lemon", "Kiwi", "Mango"]
+        console.log(fruits);
+        */
+        /*
+        const fruits = ["Apple", "Orange", "Apple", "Mango"];
+        let firstPos = fruits.indexOf("Apple"); // firstPos é 0
+        let lastPos = fruits.lastIndexOf("Apple"); // lastPos é 2
+        
+        if(firstPos != lastPos){
+            console.log("existe elemento duplicado");
+        }
+
+        console.log(firstPos);
+        console.log(lastPos);
+        */
+        /*
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let hasMango = fruits.includes("Mango"); // hasMango é true
+        
+        if(fruits.includes("Mango")){
+            console.log(fruits.includes("Mango"));
+        }
+
+        let hasKiwi = fruits.includes("Kiwi"); // hasKiwi é false
+        */
+        /*
+       const numbers = [4, 9, 16, 25, 29];
+        let firstOver18 = numbers.find(value => value > 18); // firstOver18 é 25
+        let indexOver18 = numbers.findIndex(value => value > 18); // indexOver18 é 3
+        */
+        /*
+        const temperatures = [27, 28, 30, 40, 42, 35, 30];
+        let initial = temperatures.find(temp => temp > 25);
+        let lastHighTemp = temperatures.findLast(temp => temp > 25); // lastHighTemp é 42
+        console.log(lastHighTemp);
+        console.log(initial);
+        */
+
+        /*
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        
+        console.log(fruits[0]);
+
+        fruits.sort(); // fruits agora é ["Apple", "Banana", "Mango", "Orange"]
+        
+        console.log(fruits[0]);
+
+        console.log(fruits);
+        
+        fruits.reverse(); // Inverte a ordem ordenada
+        console.log(fruits[0]); 
+
+        console.log(fruits);
+        */
+        /*
+        const points = [40, 100, 1, 5, 25, 10];
+    
+        // Errado: points.sort(); -> [1, 10, 100, 25, 40, 5]
+        //console.log(points.reverse());
+
+
+        // Certo (crescente):
+        //console.log(points.sort(function (a, b) { return a - b; }));
+
+
+        // Certo (decrescente):
+        //console.log(points.sort(function (a, b) { return b - a; }));
+
+        /*
+        const months = ["Jan", "Feb", "Mar", "Apr"];
+        const sortedMonths = months.toSorted();
+        console.log(months);
+        console.log(sortedMonths);
+        */
+        // sortedMonths é ["Apr", "Feb", "Jan", "Mar"]
+        // months continua sendo ["Jan", "Feb", "Mar", "Apr"]
+
+        /*
+        const cars = [
+            { type: "Volvo", year: 2016 },
+            { type: "Saab", year: 2001 },
+            { type: "BMW", year: 2010 }
+        ];
+        // Ordenando por ano
+        console.log(cars);
+        
+        //cars.sort(function (a, b) { return a.year - b.year; });
+        
+
+        
+        console.log(cars.toSorted(function (a, b) { return a.year - b.year; }));
+
+        */
+
+        // Situação Inicial
+        // Condição de parada
+        // Situação que deve ser executada no final de CADA iteração
+        /*
+        for (let contador = 0; contador < numbers.length; contador++) {
+          txt += numbers[contador] + "<br>";
+        }
+*/
+
+        /*
+        let numbers = [45, 4, 9, 16, 25];
+        let txt = "";
+        numbers.forEach(teste);
+
+       
+        function teste(value, index, array) {
+             array[index] = value+1; 
+            //txt += value + "<br>";
+        }
+            console.log(numbers);
+        */
+        /*
+        const numbers1 = [45, 4, 9, 16, 25];
+        // Cria um novo array com cada número multiplicado por 2
+        const numbers2 = numbers1.map(value => value * 2);
+        document.write(numbers2);
+        // numbers2 é [90, 8, 18, 32, 50]
+        */
+
+        const numbers = [45, 4, 9, 16, 25];
+        const filteredNumbers = [];
+        for (let index = 0; index < numbers.length; index++) {
+            if(numbers[index] > 18){
+                filteredNumbers.push(numbers[index]);
+            }
+        }
+        console.log(filteredNumbers);
+    </script>
+</body>
+
+</html>

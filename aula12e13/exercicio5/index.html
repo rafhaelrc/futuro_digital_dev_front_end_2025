@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resposta - Exercício 'this'</title>
+</head>
+<body>
+    <h1>Resposta - Exercício: O `this` (Cronômetro)</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver o resultado.</p>
+
+    <script>
+        console.log("--- Exercício: O `this` (Cronômetro) ---");
+        const cronometro = {
+            tempo: 0,
+            iniciar: function() {
+                console.log("Iniciando cronômetro...");
+                const intervalId = setInterval(() => {
+                    this.tempo++;
+                    console.log("Tempo:", this.tempo);
+                }, 2000);
+                setTimeout(() => {
+                    clearInterval(intervalId);
+                    console.log("Cronômetro parado.");
+                }, 6100); 
+            }
+        };
+        cronometro.iniciar();
+    </script>
+</body>
+</html>

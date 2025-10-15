@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resposta - Exercício call() vs apply()</title>
+</head>
+
+<body>
+    <h1>Resposta - Exercício: `call()` vs `apply()`</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver o resultado.</p>
+
+    <script>
+        /*
+        console.log("--- Exercício: `call()` vs `apply()` ---");
+        const numeros = [10, 2, 8, 25, 17];
+
+        console.log(numeros);
+
+        console.log(Math.min(10, 2, 8, 25, 17));
+
+        console.log(Math.min(numeros));
+
+        console.log(Math.min(this, numeros));
+
+        const menorNumero = Math.min.apply(this, numeros);
+        //console.log("O menor número no array é:", menorNumero);
+        */
+
+        const numeros = [10, 2, 8, 25, 17];
+        const menorNumero = Math.min(...numeros); // O "..." espalha os elementos do array
+
+        console.log("O menor número no array é:", menorNumero); // Retorna 2
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Final - Gerenciamento de Estoque</title>
+</head>
+<body>
+    <h1>Desafio Final: Sistema de Gerenciamento de Estoque</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver os resultados do desafio.</p>
+
+    <script>
+        // --- DADOS INICIAIS ---
+        const estoque = [
+            { id: 1, nome: 'Caneta Azul', qtd: 150, preco: 1.50 },
+            { id: 2, nome: 'Caderno 96fls', qtd: 50, preco: 19.99 },
+            { id: 3, nome: 'Borracha', qtd: 200, preco: 2.00 },
+            { id: 4, nome: 'Lápis Preto', qtd: 0, preco: 1.00 },
+            { id: 5, nome: 'Apontador', qtd: 80, preco: 3.50 }
+        ];
+        console.log("--- ESTADO INICIAL ---");
+        console.log("Estoque inicial:", estoque);
+
+        // --- PASSO 1: Adicionar um Novo Produto ---
+        console.log("\n--- PASSO 1: Adicionar um Novo Produto ---");
+        const novoProduto = { id: 6, nome: 'Mochila', qtd: 20, preco: 150.00 };
+        estoque.push(novoProduto);
+        console.log("Estoque após adicionar a mochila:", estoque);
+
+        // --- PASSO 2: Encontrar um Produto pelo ID ---
+        console.log("\n--- PASSO 2: Encontrar um Produto pelo ID (id: 3) ---");
+        const produtoEncontrado = estoque.find(produto => produto.id === 3);
+        console.log("Produto encontrado:", produtoEncontrado);
+
+        // --- PASSO 3: Listar Produtos Fora de Estoque ---
+        console.log("\n--- PASSO 3: Listar Produtos Fora de Estoque (qtd: 0) ---");
+        const foraDeEstoque = estoque.filter(produto => produto.qtd === 0);
+        console.log("Produtos fora de estoque:", foraDeEstoque);
+
+        // --- PASSO 4: Gerar um Relatório com Nomes e Preços ---
+        console.log("\n--- PASSO 4: Gerar Relatório de Nomes e Preços ---");
+        const relatorio = estoque.map(produto => {
+            return `${produto.nome} - R$ ${produto.preco.toFixed(2)}`;
+        });
+        console.log("Relatório de produtos:", relatorio);
+
+        // --- PASSO 5: Calcular o Valor Total do Estoque ---
+        console.log("\n--- PASSO 5: Calcular o Valor Total do Estoque ---");
+        const valorTotal = estoque.reduce((acumulador, produto) => {
+            return acumulador + (produto.preco * produto.qtd);
+        }, 0); // O 0 é o valor inicial do acumulador
+        console.log(`O valor total do estoque é R$ ${valorTotal.toFixed(2)}`);
+
+        // --- PASSO 6: Ordenar Produtos por Preço ---
+        console.log("\n--- PASSO 6: Ordenar Produtos por Preço (crescente) ---");
+        const estoqueCopia = [...estoque]; // Cria uma cópia rasa do array
+        estoqueCopia.sort((a, b) => a.preco - b.preco);
+        console.log("Estoque ordenado por preço:", estoqueCopia);
+        console.log("Estoque original permaneceu inalterado:", estoque);
+
+
+        // --- PASSO BÔNUS: Remover um Produto pelo ID ---
+        console.log("\n--- PASSO BÔNUS: Remover um Produto pelo ID (id: 2) ---");
+        const indexParaRemover = estoque.findIndex(produto => produto.id === 2);
+        if (indexParaRemover !== -1) {
+            estoque.splice(indexParaRemover, 1); // A partir do índice, remove 1 elemento
+            console.log("Estoque final após remover o produto de id 2:", estoque);
+        } else {
+            console.log("Produto com id 2 não encontrado para remoção.");
+        }
+
+    </script>
+</body>
+</html>

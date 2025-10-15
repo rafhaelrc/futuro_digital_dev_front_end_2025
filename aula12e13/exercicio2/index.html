@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resposta - Exercício Hoisting</title>
+</head>
+<body>
+    <h1>Resposta - Exercício: Declaração, Expressão e Hoisting</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver o resultado.</p>
+
+    <script>
+        console.log("--- Exercício: Declaração, Expressão e Hoisting ---");
+        try {
+            converterTemp(100);
+        } catch (error) {
+            console.error("Erro ao chamar antes da definição:", error.message);
+            console.log("Motivo: Expressões de função não sofrem hoisting.");
+        }
+
+        const converterTemp = function(celsius) {
+            return (celsius * 9/5) + 32;
+        };
+        console.log("100°C em Fahrenheit é:", converterTemp(100));
+    </script>
+</body>
+</html>

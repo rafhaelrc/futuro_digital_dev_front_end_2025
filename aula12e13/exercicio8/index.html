@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resposta - Exercício Closure</title>
+</head>
+<body>
+    <h1>Resposta - Exercício: Closure (Calculadora)</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver o resultado.</p>
+
+    <p id="resultado"></p>
+
+    <script>
+        console.log("--- Exercício: Closure (Calculadora) ---");
+        function criarCalculadora(valorInicial = 0) {
+            let valorAtual = valorInicial;
+            return {
+                somar: (n) => (valorAtual += n),
+                subtrair: (n) => (valorAtual -= n),
+                multiplicar: (n) => (valorAtual *= n),
+                getValor: () => valorAtual
+            };
+        }
+        const minhaCalc = criarCalculadora(parseFloat(prompt("Por favor, digite o valor inicial da calculadora: ")));
+        minhaCalc.somar(parseFloat(prompt("Por favor, digite o valor a ser somado: ")));
+        minhaCalc.multiplicar(parseFloat(prompt("Por favor, digite o valor a ser multiplicado: ")));
+        console.log("Resultado final da calculadora:", minhaCalc.getValor());
+        document.getElementById("resultado").innerHTML=minhaCalc.getValor();
+    </script>
+</body>
+</html>
