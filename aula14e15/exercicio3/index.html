@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1 e 2. Criando o construtor (classe)
+        function Produto(nome, preco, estoque) {
+            this.nome = nome;
+            this.preco = preco;
+            this.estoque = estoque;
+        }
+
+        // 3. Criando as instâncias (objetos)
+        const teclado = new Produto("Teclado", 150, 30);
+        const mouse = new Produto("Mouse", 80, 100);
+
+        // 4. Exibindo os dados
+        console.log(teclado.preco);  // Saída: 150
+        console.log(mouse.estoque);  // Saída: 100
+
+        
+
+    </script>
+</body>
+
+</html>

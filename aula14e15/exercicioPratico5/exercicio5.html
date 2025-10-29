@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5: Gerenciador de Tarefas</title>
+</head>
+<body>
+    <h1>Exercício 5: Gerenciador de Tarefas</h1>
+    <p>Abra o console do navegador para ver o resultado (F12).</p>
+
+    <script>
+        // 1. Crie uma função construtora `Tarefa`
+        function Tarefa(descricao, prioridade) {
+            this.descricao = descricao;
+            this.prioridade = prioridade;
+            // 2. Propriedade `concluida` com valor padrão
+            this.concluida = false;
+        }
+
+        // 3. Método `concluir`
+        Tarefa.prototype.concluir = function() {
+            this.concluida = true;
+        };
+
+        // 4. Método `resumo`
+        Tarefa.prototype.resumo = function() {
+            const status = this.concluida ? "[X]" : "[ ]";
+            return `${status} - ${this.descricao} (Prioridade: ${this.prioridade})`;
+        };
+        
+        // 5. Crie um array chamado `listaDeTarefas`
+        const listaDeTarefas = [];
+
+        // 6. Crie 4 instâncias de `Tarefa`
+        const tarefa1 = new Tarefa("Estudar JavaScript", "alta");
+        const tarefa2 = new Tarefa("Fazer compras", "média");
+        const tarefa3 = new Tarefa("Limpar o quarto", "baixa");
+        const tarefa4 = new Tarefa("Entregar projeto", "alta");
+
+        listaDeTarefas.push(tarefa1, tarefa2, tarefa3, tarefa4);
+
+        // 7. Marque duas tarefas como concluídas
+        tarefa2.concluir();
+        tarefa3.concluir();
+
+        // 8. Exiba a lista de tarefas
+        console.log("--- Lista de Tarefas ---");
+        listaDeTarefas.forEach(tarefa => {
+            console.log(tarefa.resumo());
+        });
+    </script>
+</body>
+</html>

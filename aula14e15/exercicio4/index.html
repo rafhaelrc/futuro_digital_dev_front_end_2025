@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        function Produto(nome, preco, estoque) {
+            this.nome = nome;
+            this.preco = preco;
+            this.estoque = estoque;
+        }
+        
+        // ... construtor e instância do teclado ...
+        const teclado = new Produto("Teclado", 150, 30);
+
+        // 2. Adicionando propriedade
+        teclado.marca = "MarcaX";
+
+        // 3. Deletando propriedade
+        delete teclado.estoque;
+        
+        // 4. Iterando sobre o objeto
+        for (let prop in teclado) {
+            console.log(prop + ": " + teclado[prop]);
+        }
+
+    </script>
+</body>
+
+</html>

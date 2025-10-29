@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resposta - Desafio Final</title>
+</head>
+<body>
+    <h1>Resposta - Desafio Final Integrado (Logger)</h1>
+    <p>Abra o console do desenvolvedor (F12) para ver o resultado.</p>
+
+    <script>
+        console.log("--- Desafio Final Integrado (Logger) ---");
+        function criarLogger(prefixo) {
+            return {
+                log: (...args) => {
+                    const dataHora = new Date().toLocaleString('pt-BR');
+                    console.log(`${prefixo} [${dataHora}] - LOG:`, ...args);
+                },
+                info: (...args) => {
+                    const dataHora = new Date().toLocaleString('pt-BR');
+                    console.info(`${prefixo} [${dataHora}] - INFO:`, ...args);
+                },
+                warn: (...args) => {
+                    const dataHora = new Date().toLocaleString('pt-BR');
+                    console.warn(`${prefixo} [${dataHora}] - WARN:`, ...args);
+                }
+            };
+        }
+        const appLogger = criarLogger("[MEU APP]");
+        appLogger.log("Iniciando o sistema...");
+        appLogger.warn("A memória está em 85% de uso.");
+    </script>
+</body>
+</html>

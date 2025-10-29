@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1: Catálogo de Filmes</title>
+</head>
+
+<body>
+    <h1>Exercício 1: Catálogo de Filmes</h1>
+    <p>Abra o console do navegador para ver o resultado (F12).</p>
+
+    <script>
+        // 1. Crie uma função construtora `Filme`
+        function Filme(titulo, anoLancamento, genero) {
+            this.titulo = titulo;
+            this.anoLancamento = anoLancamento;
+            this.genero = genero;
+            // 2. Propriedade `assistido` com valor padrão `false`
+            this.assistido = false;
+            this.marcarComoAssistido = function () {
+                this.assistido = true;
+            };
+            this.detalhes = function () {
+                const status = this.assistido ? "Assistido" : "Não assistido";
+                return `'${this.titulo}' (${this.anoLancamento}) - ${this.genero}. Status: ${status}.`;
+            };
+
+        }
+
+         // 5. Crie um array chamado `catalogo`
+        const catalogo = [];
+
+        // 6. Crie 3 instâncias de `Filme` e adicione-as ao array
+        const filme1 = new Filme("O Poderoso Chefão", 1972, "Crime");
+        const filme2 = new Filme("A Origem", 2010, "Ficção Científica");
+        const filme3 = new Filme("Cidade de Deus", 2002, "Drama");
+
+        catalogo.push(filme1, filme2, filme3);
+
+        // 7. Chame o método `marcarComoAssistido` para um dos filmes
+        filme2.marcarComoAssistido();
+
+        // 8. Use um laço para exibir os detalhes de cada filme
+        console.log("--- Catálogo de Filmes ---");
+        catalogo.forEach(filme => {
+            console.log(filme.detalhes());
+        });
+    </script>
+</body>
+
+</html>

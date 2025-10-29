@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4: Cardápio de Pizzaria</title>
+</head>
+<body>
+    <h1>Exercício 4: Cardápio de Pizzaria</h1>
+    <p>Abra o console do navegador para ver o resultado (F12).</p>
+
+    <script>
+        // 1. Crie uma função construtora `Pizza`
+        function Pizza(sabor, preco, ingredientes) {
+            this.sabor = sabor;
+            this.preco = preco;
+            this.ingredientes = ingredientes;
+            // 2. Propriedade `bordaRecheada` com valor padrão
+            this.bordaRecheada = false;
+        }
+
+        // 3. Método `adicionarBordaRecheada`
+        Pizza.prototype.adicionarBordaRecheada = function() {
+            if (!this.bordaRecheada) {
+                this.bordaRecheada = true;
+                this.preco += 5.00;
+            }
+        };
+
+        // 4. Método `descricao`
+        Pizza.prototype.descricao = function() {
+            let desc = `Pizza de ${this.sabor}. Ingredientes: ${this.ingredientes.join(", ")}. Preço: R$${this.preco.toFixed(2)}`;
+            if (this.bordaRecheada) {
+                desc += " (Com borda recheada)";
+            }
+            return desc;
+        };
+
+        // 5. Crie um array chamado `cardapio`
+        const cardapio = [];
+
+        // 6. Crie 3 instâncias de `Pizza`
+        const pizza1 = new Pizza("Mussarela", 45.00, ["Molho de tomate", "Queijo mussarela", "Orégano"]);
+        const pizza2 = new Pizza("Calabresa", 50.00, ["Molho de tomate", "Calabresa", "Cebola", "Azeitona"]);
+        const pizza3 = new Pizza("Frango com Catupiry", 55.00, ["Molho de tomate", "Frango desfiado", "Catupiry"]);
+
+        cardapio.push(pizza1, pizza2, pizza3);
+
+        // 7. Adicione borda recheada a uma pizza
+        pizza3.adicionarBordaRecheada();
+
+        // 8. Exiba o cardápio
+        console.log("--- Cardápio da Pizzaria ---");
+        cardapio.forEach(pizza => {
+            console.log(pizza.descricao());
+        });
+    </script>
+</body>
+</html>

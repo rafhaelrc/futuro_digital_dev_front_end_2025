@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3: Playlist de Músicas</title>
+</head>
+<body>
+    <h1>Exercício 3: Playlist de Músicas</h1>
+    <p>Abra o console do navegador para ver o resultado (F12).</p>
+
+    <script>
+        // 1. Crie uma função construtora `Musica`
+        function Musica(titulo, artista, duracao) {
+            this.titulo = titulo;
+            this.artista = artista;
+            this.duracao = duracao; // em segundos
+            // 2. Propriedade `favorita` com valor padrão
+            this.favorita = false;
+        }
+
+        // 3. Método `alternarFavorita`
+        Musica.prototype.alternarFavorita = function() {
+            this.favorita = !this.favorita;
+        };
+
+        // 4. Método `exibirInfo`
+        Musica.prototype.exibirInfo = function() {
+            const minutos = Math.floor(this.duracao / 60);
+            const segundos = this.duracao % 60;
+            const duracaoFormatada = `${minutos}:${segundos.toString().padStart(2, '0')}`;
+            
+            return `"${this.titulo}" por ${this.artista} - ${duracaoFormatada}`;
+        };
+        
+        // 5. Crie um array chamado `minhaPlaylist`
+        const minhaPlaylist = [];
+
+        // 6. Crie 4 instâncias de `Musica`
+        const musica1 = new Musica("Bohemian Rhapsody", "Queen", 355);
+        const musica2 = new Musica("Smells Like Teen Spirit", "Nirvana", 301);
+        const musica3 = new Musica("Imagine", "John Lennon", 183);
+        const musica4 = new Musica("Billie Jean", "Michael Jackson", 294);
+        
+        minhaPlaylist.push(musica1, musica2, musica3, musica4);
+
+        // 7. Alterne o status de favorita
+        musica1.alternarFavorita();
+        musica4.alternarFavorita();
+
+        // 8. Exiba a playlist
+        console.log("--- Minha Playlist ---");
+        minhaPlaylist.forEach(musica => {
+            const info = musica.exibirInfo();
+            const ehFavorita = musica.favorita ? " (⭐)" : "";
+            console.log(info + ehFavorita);
+        });
+    </script>
+</body>
+</html>

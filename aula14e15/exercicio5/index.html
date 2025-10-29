@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        const turma1 = {
+            aluno1: {
+                nome: "João",
+                id: 101,
+                notas: [8, 7, 9]
+            }
+        };
+
+        console.log(turma1.aluno1.nome);
+
+        const aluno = {
+            nome: "João",
+            id: 101,
+            notas: [8, 7, 9]
+        };
+
+        const turmaEx = [
+            { aluno },
+            { nome: "Mariana", id: 102, notas: [9, 10, 8] }
+        ];
+
+
+        console.log(turmaEx[0].aluno.nome);
+
+        const turma = [
+            { nome: "João", id: 101, notas: [8, 7, 9] },
+            { nome: "Mariana", id: 102, notas: [9, 10, 8] }
+        ];
+
+        // Nome do segundo aluno (índice 1)
+        console.log(turma[1].nome);
+
+        // Primeira nota (índice 0) do primeiro aluno (índice 0)
+        console.log(turma[0].notas[0]);
+        console.log(turma)
+
+    </script>
+</body>
+
+</html>
