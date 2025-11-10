@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lançamento - Tênis Cometa X</title>
+
+    <style>
+        /* Isso é um comentário CSS  */
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        p {
+            color: #333;
+        }
+
+        /* DESAFIO 4: CSS para ID e CLASSES (Ref. Slides 61-71)
+        */
+
+        /* O seletor '#' é usado para um ID único */
+        #cabecalho-produto {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #007bff;
+        }
+
+        #cabecalho-produto h1 {
+            color: blueviolet;
+            background-color: aqua;
+
+        }
+
+        /* O seletor '.' [é usado para uma classe */
+        .secao-info {
+            border: 1px solid #cccccc;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #0bda27;
+        }
+
+        .beneficio h2 {
+            color: crimson;
+        }
+
+
+
+        /* Bônus: Estilizando a tabela (Ref. Slides 55-56) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: blue;
+        }
+
+        #rodape {
+            background-color: aquamarine;
+        }
+
+        /* Bônus: Tornando o iframe responsivo */
+        iframe {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="cabecalho-produto">
+        <h1>Tênis Cometa X</h1>
+
+        <img src="https://imgs.search.brave.com/h5c2j3ciG4bsWOy7X4aAPUQNkYBqUlAT9w_NDXzZACY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzcxNjUyNS1NTEI4/MTMxMDQ2OTg5N18x/MjIwMjQtRS10bmlz/LWZpbGEtcmFjZXIt/Y29tZXQtcHJldG8t/YXp1bC1lLXByYXRh/LW1hc2N1bGluby53/ZWJw"
+            alt="Uma imagem do Tênis Cometa X" width="400">
+
+        <p><a href="https://www.google.com" target="_blank">Compre Agora!</a></p>
+
+    </div>
+
+    <div class="secao-info beneficio">
+        <h2>Benefícios</h2>
+        <!-- bullet -->
+        <ul>
+            <li>Tecnologia de amortecimento a ar</li>
+            <li>Design ultraleve</li>
+            <li>Material 100% reciclável</li>
+        </ul>
+    </div>
+
+    <div class="secao-info">
+        <h2>Especificações Técnicas</h2>
+        <table>
+            <tr>
+                <th>Característica</th>
+                <th>Detalhe</th>
+            </tr>
+            <tr>
+                <td>Peso</td>
+                <td>250g (Tamanho 40)</td>
+            </tr>
+            <tr>
+                <td>Material</td>
+                <td>Malha sintética respirável</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="secao-info">
+        <h2>Veja o Review</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZZGWUPvnYHU?si=LfmqmLej0p5pfXpJ"
+            title="Player de vídeo do YouTube"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <iframe src="../exercicio1/minha-pagina.html" width="300" height="300" frameborder="0"></iframe>
+    </div>
+
+    <div class="secao-info">
+        <h2>Preço</h2>
+        <p id="preco">Preço: R$ 500,00</p>
+
+        <button type="button" onclick="document.getElementById('preco').innerHTML = 'Preço: R$ 450,00 (OFERTA!)'">
+            Ver Oferta Especial!
+        </button>
+    </div>
+
+</body>
+
+</html>

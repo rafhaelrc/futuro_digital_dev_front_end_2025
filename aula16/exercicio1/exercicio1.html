@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Exercício 1: Produto com Desconto via Protótipo
+        function Produto(nome, preco) {
+            this.nome = nome;
+            this.preco = preco;
+        }
+
+        // Adicionando o método ao protótipo
+        Produto.prototype.calcularPrecoComDesconto = function (percentual) {
+            const desconto = this.preco * (percentual / 100);
+            return this.preco - desconto;
+        };
+        
+        // Exercício 2: Verificando o Protótipo
+        const mouse = new Produto("Mouse Gamer", 150);
+
+        console.log(mouse);
+
+        // Testando o método
+        const precoComDesconto = mouse.calcularPrecoComDesconto(10); // Desconto de 10%
+        console.log(`O preço do ${mouse.nome} com desconto é R$ ${precoComDesconto.toFixed(2)}`);
+
+        // Verificando se o protótipo está correto
+        console.log('O protótipo do objeto "mouse" é o mesmo que "Produto.prototype"?');
+        console.log(Object.getPrototypeOf(mouse) === Produto.prototype); // Deve retornar true
+    </script>
+</body>
+
+</html>

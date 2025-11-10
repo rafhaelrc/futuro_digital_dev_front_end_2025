@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Exercício 1: Refatorando para a Classe Livro
+        class Livro {
+            constructor(titulo, autor, paginas) {
+                this.titulo = titulo;
+                this.autor = autor;
+                this.paginas = paginas;
+            }
+
+            info() {
+                return `O livro "${this.titulo}" foi escrito por ${this.autor}.`;
+            }
+        }
+
+        const meuLivro = new Livro("O Hobbit", "J.R.R. Tolkien", 310);
+        console.log(meuLivro.info());
+
+
+        // Exercício 2: Calculadora com Classe
+        class Calculadora {
+            constructor() {
+                this.resultado = 0;
+            }
+
+            somar(numero) {
+                this.resultado += numero;
+                console.log(`Resultado atual: ${this.resultado}`);
+            }
+
+            subtrair(numero) {
+                this.resultado -= numero;
+                console.log(`Resultado atual: ${this.resultado}`);
+            }
+
+            limpar() {
+                this.resultado = 0;
+                console.log("Resultado zerado.");
+            }
+        }
+
+        const minhaCalc = new Calculadora();
+        minhaCalc.somar(10);
+        minhaCalc.somar(25);
+        minhaCalc.subtrair(5);
+        minhaCalc.limpar();
+    </script>
+</body>
+
+</html>

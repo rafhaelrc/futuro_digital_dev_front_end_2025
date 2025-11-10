@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Perfil de [Seu Nome]</title>
+
+    <link rel="icon" type="image/png" href="https://www.w3schools.com/favicon.ico">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        /* Regra de ID para o cabeçalho [cite: 1314, 1317] */
+        #cabecalho {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Regra de Classe para as seções [cite: 1226, 1230] */
+        .secao {
+            border: 1px solid gray;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        /* Estilo da Tabela (do exemplo do PDF)  */
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse; 
+        }
+        /* [cite: 1046-1047] */
+        th, td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cabecalho">
+        <h1>[Seu Nome]</h1>
+        <img src="https://via.placeholder.com/150" alt="Minha foto de perfil (placeholder)" width="150">
+    </div>
+
+    <div class="secao">
+        <h2>Sobre Mim</h2>
+        <p>
+            Esta é minha breve descrição. Eu acho <strong>importante</strong> 
+            aprender a desenvolver. Estou achando este desafio <em>divertido</em>!
+        </p>
+    </div>
+
+    <div class="secao">
+        <h2>Meus Links</h2>
+        <a href="https://www.w3schools.com" target="_blank">Visite a W3Schools (em nova aba)</a>
+    </div>
+
+    <div class="secao">
+        <h2>Minhas Habilidades</h2>
+        <ul>
+            <li>HTML (Estruturação)</li>
+            <li>CSS (Estilização)</li>
+            <li>JavaScript (Interatividade Básica)</li>
+        </ul>
+    </div>
+
+    <div class="secao">
+        <h2>Projetos</h2>
+        <table>
+            <tr>
+                <th>Nome do Projeto</th>
+                <th>Descrição</th>
+            </tr>
+            <tr>
+                <td>Página de Perfil</td>
+                <td>Desafio final do curso.</td>
+            </tr>
+            <tr>
+                <td>Artigo de Blog</td>
+                <td>Exercício sobre Títulos (H1, H2, H3).</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="secao">
+        <h2>Vídeo de Exemplo (Iframe)</h2>
+        <iframe width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="Player de vídeo do YouTube" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="secao">
+        <h2>Status do Desafio</h2>
+        <p id="status">Status: Aprendendo.</p>
+        
+        <button type="button" 
+                onclick="document.getElementById('status').innerHTML = 'Status: Desafio Concluído!'">
+            Finalizar Desafio
+        </button>
+    </div>
+
+</body>
+</html>

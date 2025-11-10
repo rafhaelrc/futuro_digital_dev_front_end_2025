@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1, 2, 3. Criando o construtor com método
+        function Celular(marca, modelo, preco) {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.preco = preco;
+            this.desconto = 0.1;
+
+            this.calcularPrecoComDesconto = function () {
+                return this.preco * (1 - this.desconto);
+            };
+        }
+
+        // 4, 5. Criando o array e as instâncias
+        const estoqueCelulares = [
+            new Celular("Samsung", "S23", 4500),
+            new Celular("Apple", "iPhone 15", 7000),
+            new Celular("Motorola", "Edge 40", 3000)
+        ];
+
+        // 6. Percorrendo o array e exibindo os dados
+        console.log("Celulares em promoção:");
+        for (const celular of estoqueCelulares) {
+            const precoFinal = celular.calcularPrecoComDesconto();
+            console.log(celular.modelo + " - Preço com desconto: R$ " + precoFinal.toFixed(2));
+        }
+
+    </script>
+</body>
+
+</html>

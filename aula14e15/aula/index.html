@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        const carro = {
+            marca: "Ford",
+            modelo: "Ka",
+            ano: 2019,
+            cor: "Prata",
+            placa : "IZZ-1012",
+            ligado: false
+        };
+
+        const carro2 = {
+            marca: "Ford",
+            modelo: "Ka",
+            ano: 2019,
+            placa : "IZZ-1013",
+            cor: "Prata",
+            ligado: false
+        };
+
+
+        console.log(carro.placa);
+        console.log(carro2.placa);
+        */
+
+        /*
+        const pessoa = {
+            nome: "Maria",
+            saudacao: function () {
+                console.log("Olá, mundo!");
+            },
+            apresentar: function () {
+                console.log(`Olá, eu sou ${this.nome}.`);
+            },
+            darOi: function (nome) {
+                console.log(`Olá, eu sou ${this.nome} e desejo dar oi para ${nome}`);
+            }
+        };
+
+        // Para executar o método, usamos parênteses ()
+        pessoa.saudacao();
+        pessoa.apresentar();
+        pessoa.darOi('Mateus');
+        */
+        /*
+        const pessoa = {
+            nome: "Maria",
+            ultimoNome: "Silva",
+            nomeCompleto: function () {
+                // 'this' aqui é o objeto 'pessoa'
+                return this.nome + " " + this.ultimoNome;
+            }
+        };
+        console.log(pessoa.nomeCompleto());
+        */
+
+        /*
+        const pessoa2 = {
+            nome: "Carlos",
+            idade: 42
+        };
+
+        const pessoa = new Object();
+        pessoa.nome = "Carlos";
+        pessoa.idade = 42;
+
+
+        const pessoa3 = new Object();
+        pessoa3.nome = "Carlos";
+        pessoa3.temFilhos = false;
+
+        console.log(pessoa3.temFilhos);
+        console.log(pessoa.idade);
+
+        */
+        // Classe
+        /*
+        function Carro(marca, modelo, ano) {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.ano = ano;
+            this.buzinar = function () {
+                // Retorna o som da buzina
+                return "Bibi!, " + this.modelo;
+            };
+        }
+
+        // Criando "instâncias (representações das classes)" ou objetos 
+        const meuCarro = new Carro("Ford", "Ka", 2019);
+        const outroCarro = new Carro("VW", "Gol", 2022);
+
+        console.log(meuCarro.marca);    // Saída: Ford
+        console.log(outroCarro.modelo); // Saída: Gol
+        console.log(outroCarro.buzinar());
+        console.log(meuCarro.buzinar());
+
+        */
+        /*
+         const user1 = { nome: "Ana" }; //001
+         
+         // 'user2' não é uma cópia. É uma referência para 'user1'.
+         const user2 = user1; //user2 aponta para posição 001
+ 
+         // Mudar 'user2' AFETA 'user1'!
+         user2.nome = "Bia"; //user1.nome = ""
+ 
+         console.log(user1.nome); // Saída: "Bia"
+         */
+
+        /*
+
+        function exibeNome(usuario) {
+            // Modificação inesperada!
+            //usuario.nome = usuario.nome.toUpperCase();
+            console.log(usuario.nome);
+        }
+
+        const joao = {
+            nome: "João",
+            nomeMaiusculo : function (){
+                this.nome = this.nome.toUpperCase();
+            }
+        };
+        exibeNome(joao); // Saída: JOÃO
+
+        // O objeto original foi alterado!
+        joao.nomeMaiusculo();
+        console.log(joao.nome); // Saída: JOÃO
+        */
+        /*
+        const dadosUsuario = {
+            nome: "Pedro",
+            email: "pedro@email.com"
+        };
+
+        for (let chave in dadosUsuario) {
+            console.log(chave + ": " + dadosUsuario[chave]);
+        }
+        */
+        /*
+        const dev = {
+            nome: "Júlia",
+            linguagem: "JavaScript",
+            contato: {
+                email: "julia@dev.com",
+                telefone: "9999-8888"
+            }
+        };
+
+        // Acessando o email
+        const emailDoDev = dev.contato.email;
+
+        console.log(emailDoDev);
+        */
+
+        const dev = {
+            nome: "Júlia",
+            tecnologias: ["React", "Node.js", "HTML", "CSS"]
+        };
+
+        // Acessamos a propriedade para obter o array,
+        // e depois usamos o índice para pegar o elemento.
+        console.log(dev.tecnologias[1]); // Saída: "Node.js"
+
+
+
+    </script>
+</body>
+
+</html>

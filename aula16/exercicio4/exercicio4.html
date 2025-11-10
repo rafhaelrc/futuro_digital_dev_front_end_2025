@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Exercício 1: Conversor de Temperatura
+        class Conversor {
+            static celsiusParaFahrenheit(celsius) {
+                return (celsius * 9 / 5) + 32;
+            }
+        }
+
+        class SubConversor extends Conversor {
+            celsiusParaFahrenheit(celsius) {
+                return "oi";
+            }
+        }
+
+        console.log(SubConversor.celsiusParaFahrenheit(30));
+        const sc = new SubConversor();
+        console.log(sc.celsiusParaFahrenheit(30));
+
+        // Chamando o método estático diretamente na classe
+        const temperaturaF = Conversor.celsiusParaFahrenheit(30);
+        console.log(`30°C equivalem a ${temperaturaF.toFixed(1)}°F.`);
+
+
+        // Exercício 2: Configurações de App
+        class ConfigApp {
+            static VERSAO = "2.1.0";
+        }
+
+        // Acessando a propriedade estática diretamente na classe
+        console.log(`Versão atual do App: ${ConfigApp.VERSAO}`);
+        const ca = new ConfigApp();
+        console.log(ca.VERSAO);
+    </script>
+</body>
+
+</html>

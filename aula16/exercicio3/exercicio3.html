@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Exercício 1: Funcionários e Gerentes
+        class Funcionario {
+            constructor(nome, salario) {
+                this.nome = nome; // this.nome 
+                this.salario = salario;
+            }
+        }
+
+        class Gerente extends Funcionario { // extends 
+            constructor(nome, salario, departamento) {
+                super(nome, salario); // Chama o construtor da classe pai
+                this.departamento = departamento;
+            }
+        }
+
+        const gerenteTI = new Gerente("Ana Costa", 8000, "Tecnologia da Informação");
+        console.log(`Nome: ${gerenteTI.nome}`);
+        console.log(`Salário: R$ ${gerenteTI.salario}`);
+        console.log(`Departamento: ${gerenteTI.departamento}`);
+
+
+        // Exercício 2: Publicações e Livros
+        class Publicacao {
+            constructor(titulo) {
+                this.titulo = titulo;
+            }
+
+            detalhes() {
+                return `Publicação: "${this.titulo}"`;
+            }
+        }
+
+        class Livro extends Publicacao {
+            constructor(titulo, numeroPaginas) {
+                super(titulo);
+                this.numeroPaginas = numeroPaginas;
+            }
+
+            // Sobrescrevendo e estendendo o método 'detalhes'
+            detalhes() {
+                const detalhesPai = super.detalhes(); // Chama o método original do pai
+                return `${detalhesPai}, com ${this.numeroPaginas} páginas.`;
+            }
+        }
+
+        const livroDeJS = new Livro("JavaScript: O Guia Definitivo", 1096);
+        console.log(livroDeJS.detalhes());
+    </script>
+</body>
+
+</html>

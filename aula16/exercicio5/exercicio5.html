@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Exercício 1: Dados de Filme
+        const filme = {
+            titulo: "Interestelar",
+            ano: 2014,
+            diretor: "Christopher Nolan"
+        };
+
+        const { titulo, diretor } = filme;
+        console.log(`Filme: ${titulo}`);
+        console.log(`Diretor: ${diretor}`);
+
+
+        // Exercício 2: Configuração de Componente
+        function renderizarBotao({ texto, cor = 'blue' }) {
+            console.log(`Renderizando botão: Texto="${texto}", Cor="${cor}"`);
+        }
+
+        // Testando a função
+        renderizarBotao({ texto: "Confirmar" }); // Usará a cor padrão 'blue'
+        renderizarBotao({ texto: "Cancelar", cor: "red" }); // Usará a cor fornecida 'red'
+    </script>
+</body>
+
+</html>
