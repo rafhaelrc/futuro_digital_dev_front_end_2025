@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Exercício 1: Getter de Idade
+        class Usuario {
+            constructor(nome, anoNascimento) {
+                this.nome = nome;
+                this.anoNascimento = anoNascimento;
+            }
+
+            get idade() {
+                const anoAtual = new Date().getFullYear();
+                return anoAtual - this.anoNascimento;
+            }
+        }
+
+        const usuario = new Usuario("Maria", 1995);
+        console.log(`O usuário ${usuario.nome} tem ${usuario.idade} anos.`);
+
+
+        // Exercício 2: Objeto Congelado
+        const CONFIG = {
+            MAX_LOGIN_TENTATIVAS: 3,
+            TIMEOUT_SESSAO_MINUTOS: 15
+        };
+
+        Object.freeze(CONFIG);
+
+        // Tentativa de modificação (que falhará silenciosamente)
+        CONFIG.MAX_LOGIN_TENTATIVAS = 5;
+        console.log(`Máximo de tentativas de login: ${CONFIG.MAX_LOGIN_TENTATIVAS}`); // Continuará sendo 3
+
+
+        // Exercício 3: Criação Dinâmica
+        const chave = "id_produto";
+        const valor = "A4B7-9";
+        const nome = "Monitor UltraWide";
+        const preco = 1800;
+
+        const produto = {
+            nome, // Shorthand para nome: nome
+            preco, // Shorthand para preco: preco
+            [chave]: valor // Propriedade computada
+        };
+
+        console.log("Objeto criado dinamicamente:");
+        console.log(produto);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_AQUI" frameborder="0" allowfullscreen>
+    </iframe>
+
+    <video width="320" height="240" controls muted autoplay>
+        <source src="video.mp4" type="video/mp4">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Seu navegador não suporta a tag de áudio.
+    </audio>
+
+    <canvas id="meuCanvas" width="100" height="100" style="border:1px solid #000;">
+    </canvas>
+    <script>
+        var c = document.getElementById("meuCanvas");
+        var ctx = c.getContext("2d"); // Contexto 2D
+        ctx.fillStyle = "red"; // Cor
+        ctx.fillRect(0, 0, 100, 100); // Desenha (x, y, largura, altura)
+    </script>
+</body>
+
+</html>

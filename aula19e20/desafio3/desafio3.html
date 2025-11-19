@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+
+    <style>
+        /* Estilo Padrão (Desktop-First) */
+        section {
+            display: flex;
+            /* Coloca article e aside lado a lado */
+        }
+
+        /* Quando a tela for 600px OU MENOR */
+        @media (max-width: 600px) {
+            section {
+                flex-direction: column;
+                /* Muda a direção do flex para coluna */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Meu Blog</h1>
+        <nav> <a href="#">Home</a> | <a href="#">Sobre</a>
+        </nav>
+    </header>
+
+    <section>
+        <article>
+            <h2>Primeiro Post do Blog</h2>
+            <p>Este é o texto do meu primeiro post...</p>
+        </article>
+        <aside>
+            <h3>Posts Relacionados</h3>
+            <p>Post 1, Post 2..., Post 2... , Post 2... , Post 2... , Post 2..., Post 2... , Post 2...</p>
+        </aside>
+    </section>
+
+    <footer>
+        <p>Copyright 2025 - Meu Blog</p>
+    </footer>
+</body>
+
+</html>

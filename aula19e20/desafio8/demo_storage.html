@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo: Web Storage</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    div { border: 1px solid #ccc; padding: 10px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>Desafio 8: Exemplo de Web Storage (localStorage vs. sessionStorage)</h2>
+
+  <label for="nova-tarefa">Nova tarefa:</label>
+  <input type="text" id="nova-tarefa" placeholder="Digite algo...">
+  <button onclick="salvarTarefa()">Salvar Tarefa</button>
+  <button onclick="limparTudo()">Limpar Tudo</button>
+
+  <div>
+    <h4>Salvo em <code>localStorage</code> (Permanente)</h4>
+    <p id="res-local"></p>
+  </div>
+
+  <div>
+    <h4>Salvo em <code>sessionStorage</code> (Temporário)</h4>
+    <p id="res-session"></p>
+  </div>
+
+  <small>
+    <b>Teste:</b> Salve um dado, feche esta ABA e abra o arquivo de novo. 
+    O <i>localStorage</i> continuará, mas o <i>sessionStorage</i> estará vazio.
+  </small>
+
+  <script>
+    var resLocal = document.getElementById("res-local");
+    var resSession = document.getElementById("res-session");
+    var inputTarefa = document.getElementById("nova-tarefa");
+
+    // Função para salvar nos dois storages
+    function salvarTarefa() {
+      var tarefa = inputTarefa.value;
+
+      // 2. Salva em localStorage (permanente)
+      localStorage.setItem('minhaTarefaLocal', tarefa);
+      resLocal.innerHTML = tarefa;
+
+      // 3. Salva em sessionStorage (temporário)
+      sessionStorage.setItem('minhaTarefaSession', tarefa);
+      resSession.innerHTML = tarefa;
+
+      inputTarefa.value = "";
+    }
+
+    function limparTudo() {
+        localStorage.removeItem('minhaTarefaLocal');
+        sessionStorage.removeItem('minhaTarefaSession');
+        carregarDadosSalvos(); // Atualiza a tela
+    }
+
+    // Tenta carregar os dados salvos quando a página abrir
+    function carregarDadosSalvos() {
+      var local = localStorage.getItem('minhaTarefaLocal') || 'Nada salvo.';
+      resLocal.innerHTML = local;
+
+      var session = sessionStorage.getItem('minhaTarefaSession') || 'Nada salvo.';
+      resSession.innerHTML = session;
+    }
+
+    // Roda a função assim que a página carrega
+    window.onload = carregarDadosSalvos;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        function Carro(marca, modelo) {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.descrever = function(){
+                return `Este é um ${this.marca} ${this.modelo}.`;
+            }
+        }
+
+        // Método adicionado ao protótipo. Compartilhado por todas as instâncias!
+        /*
+        Carro.prototype.descrever = function () {
+            return `Este é um ${this.marca} ${this.modelo}.`;
+        };
+        */
+        /*
+        const meuCarro = new Carro("Ford", "Ka");
+        console.log(meuCarro.descrever()); // Funciona!
+        const meuCarro2 = new Carro("Ford", "Escort");
+        console.log(meuCarro2.descrever()); // Funciona!
+        */
+
+        /*
+        function Carro(marca, modelo) {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.descrever = function () {
+                return `Este é um ${this.marca} ${this.modelo}.`;
+            }
+        }
+        */
+        /*
+        // MOLDE (protótipo)
+        class Produto {
+            // PROPRIEDADES DA CLASSE (ATRIBUTOS)
+            nome = "";
+            preco = 0.0;
+            emEstoque = false;
+            // CONSTRUIR OS OBJETOS A PARTIR DA CLASSE
+            constructor(nome, preco) {
+                this.nome = nome;
+                this.preco = preco;
+                this.emEstoque = true;
+            }
+            // COMPORTAMENTOS DA CLASSE (MÉTODOS)
+            teste(){
+                console.log("testando");
+            }
+        }
+
+        const notebook = new Produto("Notebook Dell", 3500);
+        notebook.teste();
+        console.log(notebook);
+        */
+        /*
+        class Produto {
+            constructor(nome, preco) {
+                this.nome = nome;
+                this.preco = preco;
+            }
+
+            // Método de instância
+            aplicarDesconto(percentual) {
+                return this.preco * (1 - percentual / 100);
+            }
+        }
+        const notebook = new Produto("Notebook Dell", 3500);
+        console.log(notebook.aplicarDesconto(10)); // Saída: 3150
+
+            */
+
+        /*
+    class Animal {
+        constructor(nome, idade) { 
+            this.nome = nome;
+            this.idade = idade; 
+        }
+    }
+
+
+    class Cachorro extends Animal{
+        /*
+        constructor(nome, raca) {
+            super(nome); // Chama o construtor de Animal
+            this.raca = raca;
+        }
+        */
+        /*
+        constructor(nome, idade, raca){
+         super(nome, idade);
+         this.raca = raca;
+        }
+     }
+
+     class Gato extends Animal{
+         /*
+         constructor(nome, raca) {
+             super(nome); // Chama o construtor de Animal
+             this.raca = raca;
+         }
+         */
+        /*
+         constructor(nome, idade, raca, pelugem){
+         super(nome, idade);
+         this.raca = raca;
+         this.pelugem = pelugem;
+        }
+     }
+
+     const pretinha = new Cachorro("pretinha", 10, "Pincher");
+     const kurama = new Gato("kurama", 2, "viralata", "amarelo");
+     console.log(pretinha);
+     console.log(kurama);
+
+     */
+        /*
+        class Animal {
+            constructor(nome, idade) {
+                this.nome = nome;
+                this.idade = idade;
+            }
+            falar(){
+                console.log("cheguei em animal");
+                return 'estou falando';
+            }
+        }
+
+        class Cachorro extends Animal {
+             falar() {
+                console.log("cheguei em cachorro");
+                return super.falar(); //poderia chamar o método de Animal se quiséssemos
+                //return `${this.nome} latir.`;
+            }
+        }
+
+         class Cachorro2 extends Cachorro {
+             falar() {
+                console.log("cheguei em cachorro2");
+                return super.falar(); // poderia chamar o método de Animal se quiséssemos
+                //return `${this.nome} latir.`;
+            }
+        }
+
+       const pretinha = new Cachorro2("pretinha", 10);
+       console.log();
+       console.log(pretinha.falar());
+
+       */
+        /*
+        class Validador {
+            static isEmailValido(email) {
+                return email.includes('@');
+            }
+            static exemplicando(){
+                return 'oi';
+            }
+        }
+
+        const exemplo = new Validador();
+        //console.log(exemplo.isEmailValido("teste@gmail.com"));
+        //console.log(exemplo.exemplicando());
+        console.log(Validador.exemplicando());
+0
+        // Chamado diretamente na classe, sem `new`
+        console.log(Validador.isEmailValido("teste@email.com")); // true
+        */
+        /*
+        const aluno = { nome: "Carla", curso: "Front End", matricula: 123 };
+        const { nome, curso, matricula } = aluno; // Cria variáveis nome e curso
+        console.log(nome, curso, matricula); // "Carla"
+
+
+        const nome2 = aluno.nome;
+        const curso2 = aluno.curso;
+        const matricula2 = aluno.matricula;
+        console.log(nome2);
+
+        // Com renomeação
+        const { matricula: idAluno } = aluno;
+        console.log(idAluno); // 123
+        */
+        /*
+        class Pessoa {
+            constructor(nome, sobrenome) {
+                this.nome = nome;
+                this.sobrenome = sobrenome;
+            }
+            get nomeCompleto() {
+                 return `${this.nome} ${this.sobrenome}`; 
+            }
+        }
+        const p1 = new Pessoa("Ana", "Silva");
+        console.log(p1.nome + " " +  p1.sobrenome);
+
+        console.log(p1.nomeCompleto); // Acessado sem ()
+        */
+
+        class Usuario {
+            set idade(valor) {
+                if (valor < 0) { console.log("Idade não pode ser negativa!"); return; }
+                this._idade = valor; // Armazena em uma propriedade "privada"
+            }
+        }
+        const us = new Usuario();
+        us.idade = -1;
+
+
+
+    </script>
+</body>
+
+</html>

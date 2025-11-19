@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo: Drag and Drop</title>
+  <style>
+    body { 
+      font-family: sans-serif; 
+      padding: 20px; 
+      display: flex; /* Coloca os quadros lado a lado */
+      gap: 20px;
+    }
+    .quadro { 
+      padding: 10px; 
+      border: 2px dashed #ccc; 
+      min-height: 200px; 
+      width: 200px;
+    }
+    #tarefa1 { 
+      background-color: #f0f0f0; 
+      border: 1px solid #999;
+      padding: 10px; 
+      cursor: move; /* Indica que é arrastável */
+      margin-bottom: 5px;
+    }
+    /* Estilo bônus para quando estamos arrastando sobre a dropzone */
+    #dropzone-feito.drag-over {
+      background-color: #e0ffe0;
+      border-color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Desafio 8: Exemplo de Drag and Drop (D&D)</h2>
+
+  <div class="quadro">
+    <strong>A Fazer:</strong>
+    <p id="tarefa1" draggable="true" ondragstart="drag(event)">Minha Tarefa (Arraste-me!)</p>
+  </div>
+
+  <div class="quadro" id="dropzone-feito" 
+       ondrop="drop(event)" 
+       ondragover="allowDrop(event)"
+       ondragenter="dragEnter(event)"
+       ondragleave="dragLeave(event)">
+    <strong>Feito:</strong>
+    </div>
+
+  <script>
+    // 1. OBRIGATÓRIO: Permite que um item seja solto na área
+    // Por padrão, navegadores impedem que se solte coisas em elementos.
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    // (Bônus Visual) Quando o item entra na área de drop
+    function dragEnter(ev) {
+      ev.target.classList.add('drag-over');
+    }
+
+    // (Bônus Visual) Quando o item sai da área de drop
+    function dragLeave(ev) {
+       ev.target.classList.remove('drag-over');
+    }
+
+    // 2. O que acontece quando o arraste COMEÇA
+    // Vamos "guardar" o ID do item que estamos arrastando
+    function drag(ev) {
+      // 'dataTransfer' é onde guardamos os dados do arraste
+      // Guardamos o 'id' do elemento (ex: "tarefa1")
+      ev.dataTransfer.setData("text/plain", ev.target.id);
+    }
+
+    // 3. O que acontece quando o item é SOLTO na 'dropzone'
+    function drop(ev) {
+      ev.preventDefault(); // Impede o comportamento padrão
+      ev.target.classList.remove('drag-over'); // Remove o bônus visual
+
+      // Pega o ID que guardamos no 'dragstart' (ex: "tarefa1")
+      var data = ev.dataTransfer.getData("text/plain"); 
+
+      // Pega o elemento real pelo ID
+      var elementoArrastado = document.getElementById(data);
+
+      // Anexa o item arrastado ao novo elemento pai (a dropzone)
+      ev.target.appendChild(elementoArrastado); 
+    }
+  </script>
+
+</body>
+</html>

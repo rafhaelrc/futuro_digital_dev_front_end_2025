@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo: Geolocation</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+  </style>
+</head>
+<body>
+
+  <h2>Desafio 8: Exemplo de Geolocation</h2>
+  <p>Clique no botão para pedir sua localização (o navegador pedirá permissão).</p>
+
+  <button onclick="buscarLocalizacao()">Achar Tarefas Próximas</button>
+  <p id="resultado-geo"></p>
+
+  <script>
+    function buscarLocalizacao() {
+      var resultado = document.getElementById("resultado-geo");
+
+      if (navigator.geolocation) {
+        resultado.innerHTML = "Buscando...";
+        // Pede a localização
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+      } else {
+        resultado.innerHTML = "Geolocalização não suportada pelo seu navegador.";
+      }
+    }
+
+    // O que fazer se o usuário ACEITAR
+    function onSuccess(posicao) {
+      var lat = posicao.coords.latitude;
+      var lon = posicao.coords.longitude;
+      document.getElementById("resultado-geo").innerHTML = 
+        "Localização encontrada! <br>Latitude: " + lat.toFixed(4) + 
+        "<br>Longitude: " + lon.toFixed(4);
+    }
+
+    // O que fazer se o usuário NEGAR ou der erro
+    function onError(erro) {
+      var msg;
+      switch(erro.code) {
+        case erro.PERMISSION_DENIED:
+          msg = "Usuário negou a permissão de localização.";
+          break;
+        case erro.POSITION_UNAVAILABLE:
+          msg = "Informação de localização indisponível.";
+          break;
+        case erro.TIMEOUT:
+          msg = "A requisição de localização expirou (timeout).";
+          break;
+        default:
+          msg = "Ocorreu um erro desconhecido: " + erro.message;
+      }
+      document.getElementById("resultado-geo").innerHTML = msg;
+    }
+  </script>
+
+</body>
+</html>
